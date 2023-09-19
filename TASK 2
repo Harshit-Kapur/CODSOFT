@@ -1,0 +1,38 @@
+import  java.util.Scanner;
+public class JAVAEXCERCISE1 {
+    public static void main(String[]args){
+        System.out.println("Marks of subject 1(out of 100):");
+        Scanner sc=new Scanner(System.in);
+        float a=sc.nextFloat();
+        System.out.println("Marks of Subject 2(out of 100):");
+        float b=sc.nextFloat();
+        System.out.println("Marks of Subject 3(out of 100):");
+        float c=sc.nextFloat();
+        System.out.println("Marks of Subject 4(out of 100):");
+        float d=sc.nextFloat();
+        System.out.println("Marks of Subject 5(out of 100):");
+        float e=sc.nextFloat();
+        float total_marks=a+b+c+d+e;
+        System.out.println("Total marks obtained:"+total_marks);
+        float percentage=(a+b+c+d+e)/5;
+        System.out.println("percentage obtained:"+percentage);
+        if(percentage<100&&percentage>80){
+            System.out.println("Grade:A");
+        }
+        else if(percentage<79&&percentage>65){
+            System.out.println("Grade:B");
+        } else if (percentage<64&&percentage>55) {
+            System.out.println("Grade:C");
+        }
+        else if(percentage<54&&percentage>50){
+            System.out.println("Grade:D");
+        }
+        else if(percentage<50&&percentage>45){
+            System.out.println("Grade:D");
+        }
+        else{
+            System.out.println("Grade:E");
+        }
+    }
+
+}
