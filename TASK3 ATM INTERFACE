@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+class Userbankaccount  {
+    public static int balanceAmount=10000;
+}
+class ATMmachine extends Userbankaccount{
+    public void withdraw(int c){
+        System.out.println("Withdrawing Amount:"+c);
+        if(super.balanceAmount>=c){
+            balanceAmount=super.balanceAmount-c;
+            System.out.println("Transaction completed!,please collect your money and card");
+        }
+        else{
+            System.out.println("Transaction failure!! Insufficient Funds");
+        }
+    }
+    public void deposit(int b){
+        System.out.println("Amount deposited by user is "+b);
+        System.out.println("Transaction completed!!,your money has been successfully deposited");
+        super.balanceAmount=super.balanceAmount+b;
+    }
+    public void checkBalance(){
+        System.out.println("You have selected to check current bank balance");
+        System.out.println("current bank balance available:"+super.balanceAmount);
+
+    }
+}
+
+public class ATM {
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("Welcome to the ATM Machine");
+            System.out.println("Please select any one option from the available options");
+            System.out.println("Option1:Withdrawn operation");
+            System.out.println("Option2:Depositing operation");
+            System.out.println("Option3:current bank balance");
+            System.out.println("Option4:Exit");
+            Scanner sc = new Scanner(System.in);
+            int a = sc.nextInt();
+            ATMmachine a1 = new ATMmachine();
+            switch (a) {
+                case 1:
+                    System.out.println("you have selected withdrawn operation");
+                    System.out.println("Please enter the amount to be withdrawn:");
+                    int c = sc.nextInt();
+                    a1.withdraw(c);
+                    break;
+                case 2:
+                    System.out.println("you have selected depositing operation");
+                    System.out.println("Please enter the amount to be deposited:");
+                    int b = sc.nextInt();
+                    a1.deposit(b);
+                    break;
+                case 3:
+                    a1.checkBalance();
+                    break;
+                case 4:
+                    System.out.println("Thank you for visiting the bank");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("You have selected wrong option.Please select again");
+            }
+        }
+    }
+}
